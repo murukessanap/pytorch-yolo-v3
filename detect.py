@@ -285,6 +285,10 @@ if __name__ ==  '__main__':
     def write(x, batches, results):
         c1 = tuple(x[1:3].int())
         c2 = tuple(x[3:5].int())
+        
+        c1 = (int(c1[0].item()), int(c1[1].item()))
+        c2 = (int(c2[0].item()), int(c2[1].item()))
+        
         img = results[int(x[0])]
         cls = int(x[-1])
         label = "{0}".format(classes[cls])
